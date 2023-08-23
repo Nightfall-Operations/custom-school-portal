@@ -1,9 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Custom Portal</title>
-  </head>
-  <body>
-    <div style="border: 1px solid black; height: 100px; width: 100px;">test</div>
-  </body>
+<head>
+  <title>Custom Portal</title>
+  <style>
+    .box {
+      border: 1px solid black;
+      height: 100px;
+      width: 100px;
+      margin: 10px;
+      display: inline-block;
+    }
+    .settings-menu {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      background-color: white;
+      border: 1px solid gray;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+
+  <button id="settings-button">Open Settings</button>
+  
+  <div class="settings-menu" id="settings-menu">
+    <h2>Settings</h2>
+    <!-- Add your settings options here -->
+    <button id="close-button">Close</button>
+  </div>
+
+  <script>
+    const settingsButton = document.getElementById('settings-button');
+    const settingsMenu = document.getElementById('settings-menu');
+    const closeButton = document.getElementById('close-button');
+
+    settingsButton.addEventListener('click', () => {
+      settingsMenu.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', () => {
+      settingsMenu.style.display = 'none';
+    });
+  </script>
+</body>
 </html>
